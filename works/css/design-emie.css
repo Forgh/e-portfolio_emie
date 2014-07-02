@@ -1,0 +1,169 @@
+body 
+{
+	/*background-image: url("../design-ressources/background.jpg");*/
+	background-color:white;
+}
+
+img 
+{
+   border: none;
+}
+
+@font-face {
+	font-family : "grandl";
+	src: url('../../design-ressources/font/grandezzalight.ttf');
+}
+
+@font-face {
+	font-family : "grandm";
+	src: url('../../design-ressources/font/grandezzamedium.ttf');
+}
+
+@font-face {
+	font-family : "grandh";
+	src: url('../../design-ressources/font/grandezzabold.ttf');
+}
+
+@font-face {
+	font-family : "walkwayUESB";
+	src: url('../../design-ressources/font/walkwayUESB.ttf');
+}
+
+h1
+{
+	color: gray;
+}
+
+p
+{
+   color: gray;
+   font-family: Arial;
+}
+
+a 
+{
+	text-decoration: none;
+	color: rgb(150,150,150);
+	outline:none;
+}
+
+a:hover 
+{
+	color:rgb(255,62,255);
+}
+
+#corps
+{
+	width: 65%;
+	margin-top: 70px;
+	margin-left: 28%;
+	min-height: 100%;
+	clear: none;
+}
+
+.imgFade
+{
+	margin-right : 5%;
+	margin-bottom: 5%;
+	vertical-align:bottom;
+}
+
+/*------------Back---------------*/
+
+#back
+{
+	 background-image: url('../design-ressources/back.png');
+     position:absolute;
+     left: 20px;
+     top: 250px;
+	 width:128px;
+	height:60px;
+}
+
+#back:hover
+{
+	 background-image: url('../design-ressources/backhover.png');
+}
+
+/*-----------FIN Back------------*/
+
+
+/*-------------GoToOther---------*/
+#home
+{
+	width:143px;
+	height:34px;
+	background-image: url('../design-ressources/gotoother.png');
+	position:absolute;
+	margin-top:150px;
+	margin-left:10px;
+}
+
+#home:hover
+{
+	background-image: url('../design-ressources/gotohover.png');
+}
+
+/*----------Fin GoToOther--------*/
+
+/*-------------MENU--------------*/
+#top
+{
+	width: 600px;
+	position:absolute;
+	left:50%;
+	margin-left:-300px;
+}
+
+#menu
+{
+	margin-top: 50px;
+	border-bottom: 2px solid gray;
+	}
+
+#menu li
+{
+	margin-bottom: 1%;
+	margin-right:2%;
+	display:inline;
+}
+
+
+.currentmenu
+{
+	color: rgb(255,62,255);
+	font-family: "grandm", Arial;
+	font-size:1.3em;
+}
+
+.normalmenu
+{
+	color: rgb(51,51,51);
+	font-family: "grandl", Arial;
+	font-size:1.3em;
+
+}
+/*-------------FIN MENU----------*/
+
+
+
+#entete
+{
+ position:absolute;
+   left:50%;
+   margin-left: -225px;
+	width:450px;
+	margin-top:-100px;
+}   
+
+#entete p
+{
+	font-family : "walkwayUESB";
+	font-size: 3.5em;
+}
+
+
+
+
+
+
