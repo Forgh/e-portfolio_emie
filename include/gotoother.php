@@ -1,0 +1,1 @@
+<a href="../<?php echo $cate_other;?>/travaux.php"><div id="home"></div></a>

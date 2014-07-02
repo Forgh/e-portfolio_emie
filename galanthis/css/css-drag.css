@@ -1,0 +1,33 @@
+/* style global de la liste non ordonné */
+ul#list-photos, ul#list-restant{
+  list-style:none;
+  width: 770px;
+  padding-top:20px;
+  padding-left:20px;
+  border-radius:3px;
+  position: relative;
+  margin:10px 0px 10px;
+  min-height: 290px;
+  overflow: hidden;
+  box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0);  
+}
+/* style des éléments de la liste */
+ul#list-photos li, ul#list-restant li{
+  border:1px solid #ddd;
+  padding:10px;
+  cursor:move;
+  height:150px;
+  width:150px;
+  float:left;
+  margin-right:20px;
+  margin-bottom: 20px;
+  background:#fff;
+  color:#212326;
+  font-size:12px;
+  -moz-box-shadow:2px 2px 5px #ccc;
+}
+/* style de l'élément fantome, qui apparait losque que l'on bouge un élément */
+ul#list-photos li.highlight, ul#list-restant li.highlight{
+  background:#f2f2f2;
+  border:1px dashed #212326;
+}
