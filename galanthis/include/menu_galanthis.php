@@ -12,18 +12,33 @@
 			</ul>
 		<?php } ?>
 			<div class="barre_onglet_menu" ></div>
-		<li><a href="update_text.php">Textes</a></li>
+		<li><a href="update_contact.php">Liens / Contact</a></li>
 		
 
 
-		<?php if ($page == "textes") { ?>
+		<?php if ($page == "links" || $page == "contact") { ?>
 			<ul class="sousmenu_galanthis">
-				<li><a href="update_text.php">Modifier Expositions</a></li>
 				<li><a href="update_contact.php">Modifier Contact</a></li>
 				<li><a href="update_links.php">Modifier Liens</a></li>
 			</ul>
 
 		<?php } ?>
+		
+	<div class="barre_onglet_menu" ></div>
+	
+	<li><a href="new_text.php">Textes</a></li>
+		
+
+
+		<?php if ($page == "textes") { ?>
+			<ul class="sousmenu_galanthis">
+				<li><a href="new_text.php">Nouveau texte</a></li>
+				<li><a href="edit_text.php">Editer texte</a></li>
+				<li><a href="delete_text.php">Supprimer texte</a></li>
+			</ul>
+
+		<?php } ?>
+		
 	<div class="barre_onglet_menu" ></div>
 
 	</ul>

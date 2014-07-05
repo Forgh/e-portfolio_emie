@@ -28,7 +28,7 @@
 	</head>
 	<body>
 	<?php 
-				$page='textes';
+				$page='contact';
 			include("include/entete.php");
 			include("include/menu_galanthis.php");
 	?>
