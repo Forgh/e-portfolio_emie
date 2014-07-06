@@ -4,7 +4,7 @@
 		<title>Galanthis - Modifier Liens</title>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
-		<link rel="stylesheet" href="css/design-stf.css" />
+		<link rel="stylesheet" href="css/design-emie.css" />
 		<script type="text/javascript" src="tinymce/tinymce.min.js"></script>
 		<script type="text/javascript">
 			tinymce.init({
@@ -40,7 +40,7 @@
 		{ 
 			include("include/link.php");				
 			
-		$update_text= $bdd->prepare('UPDATE textes SET texte_libre = ? WHERE titre_texte = "links"'); 
+		$update_text= $bdd->prepare('UPDATE informations SET texte_libre_info = ? WHERE titre_info = "links"'); 
 		$update_text->execute(array($_POST['texte_links']));
 		echo '<p>Le texte a bien été modifié.</p>';
 		}
@@ -53,8 +53,9 @@
 				include("include/link.php");
 				
 				////////Récupération et affichage du texte actuel ///////////////////////////////////////////////
-				$texte_links = $bdd->query('SELECT texte_libre FROM textes WHERE titre_texte = "links"');
+				$texte_links = $bdd->query('SELECT texte_libre_info FROM informations WHERE titre_info = "links"');
 				$affichage_texte = $texte_links->fetch();
+				$texte_links->closeCursor();
 				echo $affichage_texte['texte_libre'];
 		
 			?>

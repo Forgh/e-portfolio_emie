@@ -1,5 +1,5 @@
 <?php
-$upload_dir = '../Dessins/images/';
+$upload_dir = '../works/images/';
 $allowed_ext = array('jpg','jpeg','png','gif');
 		function createThumbnail ($lien, $lien_thumbnail)
 		{

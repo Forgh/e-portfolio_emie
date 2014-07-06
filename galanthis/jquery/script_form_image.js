@@ -9,7 +9,7 @@ $(function(){
 
         maxfiles: 20,
     	maxfilesize: 2, // in mb
-        url: 'post_file_dessins.php',
+        url: 'post_file_image.php',
 
         uploadFinished:function(i,file,response){
             $.data(file).addClass('done');

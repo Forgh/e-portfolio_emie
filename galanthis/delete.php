@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr" >
 	<head>
-       <title>Callisto - Connexion </title>
+       <title>Galanthis - Supprimer une série </title>
        <meta charset="UTF-8" />
 	   <link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
-	   <link rel="stylesheet" href="css/design-stf.css" />
+	   <link rel="stylesheet" href="css/design-emie.css" />
 	</head>
 	<body>
 	<?php
 			$page='series';
 			include("include/entete.php");
 			include("include/menu_galanthis.php");
+			
+			function deleteImage($filedir) {
+				unlink('works/'.$filedir.'');
+			}
 	?>
 	<div id="corps_accueil">
 
-		<form action="delete.php" method="post" enctype="multipart/form-data">
-			<p>
-				Catégorie de la série à supprimer : <select name="categorie_choix">
-															<option value="Dessins" <?php if ((isset($_POST['categorie_choix'])) AND (($_POST['categorie_choix']=="Dessins"))) {echo "selected";}?>>Dessins</option>
-															<option value="Installations" <?php if ((isset($_POST['categorie_choix'])) AND (($_POST['categorie_choix']=="Installations"))) {echo "selected";}?>>Installations</option>
-														</select>
-														<input type="submit" value="OK"/>
-			</p>
-		</form>
 		
-		<?php
-		if (isset($_POST['categorie_choix']) AND !isset($_POST['suppression_choix']))
-		{
-		?> 
 		
 		<form action="delete.php" method="post" enctype="multipart/form-data"> 
+			<fieldset>	
 				<p> 
 					Choisissez la série à supprimer : 	<select name="suppression_choix">';
 													 
 														<?php include("include/link.php");
 														
 														//Récupération des séries de la catégorie choisie
-														$series_existantes= $bdd->prepare('SELECT * FROM series WHERE nom_categorie= ?');
-														$series_existantes->execute(array($_POST['categorie_choix']));
-														
+														$series_existantes= $bdd->query('SELECT id_serie, nom_serie FROM series');
+											
 														
 														while ($choix_serie = $series_existantes->fetch())
 														{
-															echo '<option value="'.$choix_serie['nom_serie'].'">'.$choix_serie['nom_serie'].'</option>';
+															echo '<option value="'.$choix_serie['id_serie'].'">'.$choix_serie['nom_serie'].'</option>';
 														}
 														$series_existantes->closeCursor();
-														?> </select><input type="submit" value="Supprimer"/>
-				</form>
+														?> </select><input type="submit" value="Supprimer">
+				</p>
+			</fieldset>											
+		</form>
 				
 				<?php
-		}
-		
+			
 		else if (isset($_POST['suppression_choix']))												
 		{	
 			include("include/link.php");
+			//Getting the serie's name (purely aesthetic) 
+			$nom_serie= $bdd->prepare('SELECT nom_serie FROM series WHERE id_serie = ?');
+			$nom_serie->execute(array($_POST['suppression_choix']));
+
+			//deleting files
+			$directories = $bdd->prepare('SELECT link_image, link_thumbnail FROM images WHERE nom_serie = ?');
+			$directories->execute(array($nom_serie['nom_serie']);
 			
-			//suppression de la série choisie
-			$suppression_serie= $bdd->prepare('DELETE FROM series WHERE nom_serie= ?');
+			while ($dir = $directories->fetch())
+			{
+				deleteImage($dir['link_image']);
+				deleteImage($dir['link_thumbnail']);
+			}
+			$directories->closeCursor();
+			
+			//deleting the serie in the database
+			$suppression_serie= $bdd->prepare('DELETE FROM series WHERE id_serie= ?');
 			$suppression_serie->execute(array($_POST['suppression_choix']));
 			
 			?>
-			<p> Série "<?php echo $_POST['suppression_choix'];?>" supprimée avec succès. </p>
+			<p> Série "<?php echo $nom_serie['nom_serie'];?>" supprimée avec succès. </p>
 			<?php
 		}
 		

@@ -4,7 +4,7 @@
        <title>Galanthis - Ajout d'une série</title>
        <meta charset="UTF-8" />
 	   <link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
-	   <link rel="stylesheet" href="css/design-stf.css" />
+	   <link rel="stylesheet" href="css/design-emie.css" />
        <link rel="stylesheet" href="css/styles.css" />
 
 
@@ -77,7 +77,7 @@
 						echo "<p>Extension correcte, ";
 						$id_image=md5(uniqid(rand(), true));
 						
-						$nom_categorie = $_POST['categorie_choix']; //On réceptionne le nom de la catégorie
+						$nom_categorie = 'works'; //On réceptionne le nom de la catégorie
 
 						$nom = "../{$nom_categorie}/images/{$id_image}.{$extension_upload}";
 						$resultat = move_uploaded_file($_FILES['preview']['tmp_name'],$nom);
@@ -99,9 +99,8 @@
 		$nom_serie = str_replace(' ','_',$_POST['titre_serie']);
 		
 		//Creation du nouveau tuple dans la table series
-		$new_serie= $bdd->prepare('INSERT INTO series(nom_categorie, nom_serie, link_preview_serie) VALUES (:nom_categorie, :nom_serie, :link_preview_serie)');
+		$new_serie= $bdd->prepare('INSERT INTO series(nom_serie, link_preview_serie) VALUES (:nom_serie, :link_preview_serie)');
 		$new_serie->execute(array(
-						'nom_categorie' => $nom_categorie,
 						'nom_serie' => $nom_serie,
 						'link_preview_serie' => $link_preview,
 					));
@@ -120,24 +119,19 @@
 			}
 			else { ?>
 				<form action="form2.php" method="post" enctype="multipart/form-data">
-				<p>
-					<label for="categorie_choix">Catégorie cible de la série à ajouter : </label>
-															<select name="categorie_choix" id="categorie_choix">
-																<option value="Dessins">Dessins</option>
-																<option value="Installations">Installations</option>
-															</select>
-				</p>
-				<p> 
-					<label for="titre_serie">Titre de la nouvelle série : </label> 
-					<input type="text" name="titre_serie" id="titre_serie"/>
-				</p>	
-				
-				<p>
-					<label for="preview">Choix de la preview : </label><input type="file" name="preview" id="preview"/> <!--Upload de l'image preview, celle-ci sera TOUJOURS la case 0 du tableau image_contenu -->
-				</p>
-							<p>
-					<input type="submit" value="Enregistrer la série" />
-				</p>
+				<fieldset>
+					<p> 
+						<label for="titre_serie">Titre de la nouvelle série : </label> 
+						<input type="text" name="titre_serie" id="titre_serie"/>
+					</p>	
+					
+					<p>
+						<label for="preview">Choix de la preview : </label><input type="file" name="preview" id="preview"/> <!--Upload de l'image preview, celle-ci sera TOUJOURS la case 0 du tableau image_contenu -->
+					</p>
+								<p>
+						<input type="submit" value="Enregistrer la série" />
+					</p>
+				<fieldset>
 			</form>
 		<?php }?>
 
@@ -151,13 +145,8 @@
         <!-- The main script file -->
 		<?php
 		if (isset($_POST['categorie_choix'])) {
-			if ($_POST['categorie_choix'] == "Dessins") {
-				echo '<script src="jquery/script_dessins.js"></script>';
-			}
-			elseif ($_POST['categorie_choix'] == "Installations"){
-				echo '<script src="jquery/script_installations.js"></script>';
-			}
-		}
+				echo '<script src="jquery/script_form_image.js"></script>';
+		}	
 		?>
 	</div>
 	</body>

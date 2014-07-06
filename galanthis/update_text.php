@@ -4,7 +4,7 @@
 		<title>Galanthis - Modifier un texte</title>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
-		<link rel="stylesheet" href="css/design-stf.css" />
+		<link rel="stylesheet" href="css/design-emie.css" />
 		<script type="text/javascript" src="tinymce/tinymce.min.js"></script>
 		<script type="text/javascript">
 			tinymce.init({

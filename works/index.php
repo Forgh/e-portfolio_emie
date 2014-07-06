@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
    <head>
-       <title>Stephane Protic - Travaux </title>
+       <title>Emie Vilar</title>
        <meta charset="UTF-8" />
 	   <link rel="icon" type="image/png" href="design-ressources/favicon32.png" />
 	   <link rel="stylesheet" type="text/css" href="css/design-emie.css" />
