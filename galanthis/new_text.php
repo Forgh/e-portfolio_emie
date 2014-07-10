@@ -38,8 +38,8 @@
 	<form action="add_text.php" method="post" enctype="multipart/form-data">
 		<fieldset>
 			<p>
-				<input type="text" id="title" name="title">
 				<legend for="title">Titre de l'article : </legend>
+				<input type="text" id="title" name="title">
 			</p>
 			<p>
 				<textarea name="texte_article">

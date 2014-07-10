@@ -30,7 +30,7 @@ CREATE TABLE textes (
 id_texte int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 titre_texte varchar(25) NOT NULL,
 texte_libre varchar(50000),
-date_texte timestamp NOT NULL,
+date_texte timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 CONSTRAINT pk_textes PRIMARY KEY(id_texte))
 engine=innodb CHARACTER SET UTF8 COLLATE utf8_unicode_ci;;
 
