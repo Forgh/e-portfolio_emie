@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr" >
 	<head>
-		<title>Stéphane Protic - Contact</title>
+		<title>Emie Vilar - Contact</title>
+	   <meta name="description" content="Site Web d'Emie Vilar, photographe."/>
+       <meta name="keywords" content="Emie,emie,EMIE,Vilar,VILAR,vilar,photographe,photographie,photo,index,contact"/>
+		
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
-		<link rel="stylesheet" href="css/design-stf.css" />
-	   <meta name="description" content="Site web de Stéphane Protic, artiste plasticien."/>
-       <meta name="keywords" content="Stephane,Stéphane,STEPHANE,Protic,PROTIC,protic,stephane,artiste,Artiste,plasticien,Plasticien"/>
+		<link rel="stylesheet" href="css/design-emie.css" />
 
    </head>
    <body>
 	
 	<?php
 		$page='contact';
-		$cate_other='Installations';
 		include('../include/entete.php');
 		include('../include/menu.php');
 		include('../include/gotoother.php');
@@ -23,9 +23,9 @@
 			include("../include/link.php");	
 			
 			////////Récupération et affichage du texte actuel ///////////////////////////////////////////////
-			$texte_contact = $bdd->query('SELECT texte_libre FROM textes WHERE titre_texte = "contact"');
+			$texte_contact = $bdd->query('SELECT texte_libre_info FROM informations WHERE titre_info = "contact"');
 			$affichage_texte = $texte_contact->fetch();
-			echo $affichage_texte['texte_libre'];
+			echo $affichage_texte['texte_libre_info'];
 		?>
 	</div> 
  

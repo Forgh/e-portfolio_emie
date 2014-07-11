@@ -67,6 +67,7 @@
 			//Getting the serie's name (purely aesthetic) 
 			$nom_texte= $bdd->prepare('SELECT titre_texte, texte_libre FROM textes WHERE id_texte = ?');
 			$nom_texte->execute(array($_POST['edition_choix']));
+			$affichage_texte = $nom_texte->fetch();
 			?>
 			<form action="edit_text.php" method="post" enctype="multipart/form-data">
 		<fieldset>
@@ -77,7 +78,7 @@
 			</p>
 			<p>
 				<textarea name="texte_article">
-					<?php echo $nom_texte['texte_libre']; ?>
+					<?php echo $affichage_texte['texte_libre']; ?>
 				</textarea>
 			</p>
 			
@@ -93,7 +94,7 @@
 		else if(isset($_POST['id_text'])){
 			$edit_text= $bdd->prepare('UPDATE textes SET titre_texte = ?,  texte_libre = ? WHERE id_texte = ?');
 			$edit_text = $bdd->execute(array($_POST['title'],$_POST['texte_article'],$_POST['id_text']));
-		
+			
 		?>
 			<p> Article "<?php echo $_POST['title'];?>" édité avec succès. </p>
 		<?php

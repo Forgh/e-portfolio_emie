@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr" >
    <head>
-       <title>Stéphane Protic - Travaux </title>
+       <title>Emie Vilar - Séries</title>
        <meta charset="UTF-8" />
+	   <meta name="description" content="Site Web d'Emie Vilar, photographe."/>
+       <meta name="keywords" content="Emie,emie,EMIE,Vilar,VILAR,vilar,photographe,photographie,photo, séries, series, serie"/>
 	   <link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
-	   <link rel="stylesheet" href="css/design-stf.css" />
+	   <link rel="stylesheet" href="css/design-emie.css" />
 	   <script type="text/javascript" src="highslide/highslide-with-gallery.packed.js"></script>
 	   <script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
 	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>

@@ -48,14 +48,14 @@
 			//Getting the serie's name (purely aesthetic) 
 			$nom_texte= $bdd->prepare('SELECT titre_texte FROM textes WHERE id_texte = ?');
 			$nom_texte->execute(array($_POST['suppression_choix']));
-
+			$display_title = $nom_texte->fetch();
 			
 			//deleting the serie in the database
 			$suppression_texte= $bdd->prepare('DELETE FROM texte WHERE id_texte= ?');
 			$suppression_texte->execute(array($_POST['suppression_choix']));
 			
 			?>
-			<p> Article "<?php echo $nom_serie['titre_texte'];?>" supprimé avec succès. </p>
+			<p> Article "<?php echo $display_title['titre_texte'];?>" supprimé avec succès. </p>
 			<?php
 		}
 		

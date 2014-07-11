@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" >
 	<head>
-		<title>Emie Vilar - Liens</title>
+		<title>Emie Vilar - Articles</title>
+	    <meta name="description" content="Site Web d'Emie Vilar, photographe."/>
+        <meta name="keywords" content="Emie,emie,EMIE,Vilar,VILAR,vilar,photographe,photographie,photo,index,articles"/>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Site Web d'Emie Vilar, photographe."/>
-        <meta name="keywords" content="Emie,emie,EMIE,Vilar,VILAR,vilar,photographe,photographie,photo, liens"/>
 		<link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
 		<link rel="stylesheet" href="css/design-emie.css" />
 
@@ -12,7 +12,7 @@
    <body>
 	
 	<?php
-		$page='liens';
+		$page='contact';
 		include('../include/entete.php');
 		include('../include/menu.php');
 		include('../include/gotoother.php');
@@ -22,8 +22,8 @@
 			include("../include/link.php");	
 			
 			////////Récupération et affichage du texte actuel ///////////////////////////////////////////////
-			$texte_links = $bdd->query('SELECT texte_libre_info FROM informations WHERE titre_info = "links"');
-			$affichage_texte = $texte_links->fetch();
+			$texte_contact = $bdd->query('SELECT texte_libre_info FROM informations WHERE titre_info = "contact"');
+			$affichage_texte = $texte_contact->fetch();
 			echo $affichage_texte['texte_libre_info'];
 		?>
 	</div> 
