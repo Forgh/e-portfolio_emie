@@ -20,7 +20,8 @@
 	<div id="corps">
 		<?php
 			include("../include/link.php");	
-			
+			////////Récupérations des articles/////////
+			$articles = $bdd->query('SELECT id_texte FROM textes ORDER BY 
 			////////Récupération et affichage du texte actuel ///////////////////////////////////////////////
 			$texte_contact = $bdd->query('SELECT texte_libre_info FROM informations WHERE titre_info = "contact"');
 			$affichage_texte = $texte_contact->fetch();
