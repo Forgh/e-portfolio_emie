@@ -48,12 +48,10 @@
 			</p>
 			
 			<p>
-				<input type="validate" value="Envoyer">
+				<input type="submit" value="Valider" />
 			</p>
 		</fieldset>
-	<p>
-		<input type="submit" value="Valider" />
-	</p>
+	
 	
 	</form>
 	</div>

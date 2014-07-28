@@ -4,7 +4,7 @@ nom_serie varchar(25) CHARACTER SET UTF8 COLLATE utf8_general_ci NOT NULL,
 link_preview_serie varchar(75) NOT NULL,
 position_serie int(11) UNSIGNED,
 CONSTRAINT pk_series PRIMARY KEY(id_serie),
-INDEX (nom_serie),
+INDEX (nom_serie))
 engine=innodb CHARACTER SET UTF8 COLLATE utf8_unicode_ci;
 
 
@@ -23,7 +23,7 @@ CREATE TABLE informations (
 id_info int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 titre_info varchar(25) NOT NULL,
 texte_libre_info varchar(50000),
-CONSTRAINT pk_textes PRIMARY KEY(id_texte))
+CONSTRAINT pk_info PRIMARY KEY(id_info))
 engine=innodb CHARACTER SET UTF8 COLLATE utf8_unicode_ci;;
 
 CREATE TABLE textes (

@@ -1,8 +1,8 @@
 <?php
 
-function load_news($time) {
+function load_articles($time) {
 
-   $response = array(); // @return
+  // $response = array(); // @return
 
 
   // This week
@@ -34,7 +34,7 @@ function load_news($time) {
 
 function from_time($time){
 	 
-	 require('../modeles/connect.php');
+	require('../../include/link.php');
 	//Return ALL the things!			
 	if ($time == 0) {
 		$req = $bdd -> query('SELECT id_texte, titre_texte FROM textes ORDER BY date_texte DESC');
@@ -46,7 +46,7 @@ function from_time($time){
 		$timeMin= $now - $time; 
 	
 		$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte > ? AND date_texte < ? ORDER BY date_texte DESC');
-		$req -> execute(array($timeMin, $now); 
+		$req -> execute(array($timeMin, $now)); 
 
 		
 	}	
@@ -58,15 +58,15 @@ function from_time($time){
 
 function create_selects($infos){
 
-	$ret = '<select>';
+	$ret = '<select name="articles">';
 	while($line = $infos->fetch()){
 		$ret += '<option value="'.$line['id_texte'].'">'.$line['titre_texte'].'</option>';
 	}
 	$ret += '</select>';
 }
 
-if (@$_REQUEST['action'] == 'load_news' && isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
-    echo json_encode(load_news($_REQUEST['time']));
+if (@$_REQUEST['action'] == 'load_articles' && isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+    echo json_encode(load_articles($_REQUEST['time']));
     exit; // only print a JSON typed response
 }
 ?>

@@ -118,22 +118,25 @@
 		<?php
 			}
 			else { ?>
-				<form action="form2.php" method="post" enctype="multipart/form-data">
+			<form action="form2.php" method="post" enctype="multipart/form-data">
 				<fieldset>
 					<p> 
 						<label for="titre_serie">Titre de la nouvelle série : </label> 
-						<input type="text" name="titre_serie" id="titre_serie"/>
+						<input type="text" name="titre_serie" id="titre_serie">
 					</p>	
 					
 					<p>
-						<label for="preview">Choix de la preview : </label><input type="file" name="preview" id="preview"/> <!--Upload de l'image preview, celle-ci sera TOUJOURS la case 0 du tableau image_contenu -->
+						<label for="preview">Choix de la preview : </label>
+						<input type="file" name="preview" id="preview"> <!--Upload de l'image preview, celle-ci sera TOUJOURS la case 0 du tableau image_contenu -->
 					</p>
-								<p>
-						<input type="submit" value="Enregistrer la série" />
+					<p>
+						<input type="submit" value="Enregistrer la série" >
 					</p>
-				<fieldset>
+				</fieldset>
 			</form>
-		<?php }?>
+		<?php 
+			}
+		?>
 
 		<!-- Including The jQuery Library -->
         <script src="jquery/jquery.js"></script>

@@ -24,7 +24,7 @@
 			$date = time();
 			
 			$adding_text = $bdd->prepare('INSERT INTO textes (titre_texte, texte_libre, date_texte) VALUES (:titre_texte, :texte_libre, :date_texte)');
-			$adding_text = $bdd->execute(array(	'titre_texte' => $titre,
+			$adding_text ->execute(array(	'titre_texte' => $titre,
 												'texte_libre' => $texte,
 												'date_texte' => $date,
 												));

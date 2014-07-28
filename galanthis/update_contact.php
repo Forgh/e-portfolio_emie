@@ -55,7 +55,7 @@
 				$texte_contact = $bdd->query('SELECT texte_libre_info FROM informations WHERE titre_info = "contact"');
 				$affichage_texte = $texte_contact->fetch();
 				$texte_contact->closeCursor();
-				echo $affichage_texte['texte_libre'];
+				echo $affichage_texte['texte_libre_info'];
 		
 			?>
 		</textarea>

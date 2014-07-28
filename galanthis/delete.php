@@ -43,7 +43,7 @@
 				
 				<?php
 			
-		else if (isset($_POST['suppression_choix']))												
+		if(isset($_POST['suppression_choix']))												
 		{	
 			include("include/link.php");
 			//Getting the serie's name (purely aesthetic) 
@@ -52,7 +52,7 @@
 
 			//deleting files
 			$directories = $bdd->prepare('SELECT link_image, link_thumbnail FROM images WHERE nom_serie = ?');
-			$directories->execute(array($nom_serie['nom_serie']);
+			$directories->execute(array($nom_serie['nom_serie']));
 			
 			while ($dir = $directories->fetch())
 			{

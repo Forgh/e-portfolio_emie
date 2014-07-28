@@ -56,7 +56,7 @@
 				$texte_links = $bdd->query('SELECT texte_libre_info FROM informations WHERE titre_info = "links"');
 				$affichage_texte = $texte_links->fetch();
 				$texte_links->closeCursor();
-				echo $affichage_texte['texte_libre'];
+				echo $affichage_texte['texte_libre_info'];
 		
 			?>
 		</textarea>

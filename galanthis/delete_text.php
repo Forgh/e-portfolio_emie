@@ -8,7 +8,7 @@
 	</head>
 	<body>
 	<?php
-			$page='series';
+			$page='textes';
 			include("include/entete.php");
 			include("include/menu_galanthis.php");
 	?>
@@ -22,11 +22,11 @@
 		<form action="delete_text.php" method="post" enctype="multipart/form-data"> 
 			<fieldset>	
 				<p> 
-					Choisissez l'article à supprimer : 	<select name="suppression_choix">';
+					Choisissez l'article Ã  supprimer : 	<select name="suppression_choix">';
 													 
 														<?php include("include/link.php");
 														
-														//Récupération des séries de la catégorie choisie
+														//RÃ©cupÃ©ration des sÃ©ries de la catÃ©gorie choisie
 														$textes_existants= $bdd->query('SELECT id_texte, titre_texte FROM textes ORDER BY date_texte ASC');
 											
 														
@@ -41,8 +41,8 @@
 		</form>
 				
 				<?php
-			
-		else if (isset($_POST['suppression_choix']))												
+		}	
+		elseif (isset($_POST['suppression_choix']))												
 		{	
 			include("include/link.php");
 			//Getting the serie's name (purely aesthetic) 
@@ -55,7 +55,7 @@
 			$suppression_texte->execute(array($_POST['suppression_choix']));
 			
 			?>
-			<p> Article "<?php echo $display_title['titre_texte'];?>" supprimé avec succès. </p>
+			<p> Article "<?php echo $display_title['titre_texte'];?>" supprimÃ© avec succÃ¨s. </p>
 			<?php
 		}
 		

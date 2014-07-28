@@ -27,7 +27,7 @@
 	</head>
 	<body>
 	<?php
-			$page='series';
+			$page='textes';
 			include("include/entete.php");
 			include("include/menu_galanthis.php");
 	?>
@@ -60,8 +60,8 @@
 		</form>
 				
 				<?php
-			
-		else if (isset($_POST['edition_choix']))												
+		}	
+		elseif (isset($_POST['edition_choix']))												
 		{	
 			include("include/link.php");
 			//Getting the serie's name (purely aesthetic) 
@@ -73,7 +73,7 @@
 		<fieldset>
 			<p>
 				<legend for="title">Titre de l'article : </legend>
-				<input type="text" id="title" name="title" value="<?php echo $nom_texte['titre_texte']; ?>">
+				<input type="text" id="title" name="title" value="<?php echo $affichage_texte['titre_texte']; ?>">
 				<input type="hidden" name="id_text" value="<?php echo $_POST['edition_choix']; ?>" >
 			</p>
 			<p>
@@ -83,12 +83,10 @@
 			</p>
 			
 			<p>
-				<input type="validate" value="Envoyer">
-			</p>
+				<input type="submit" value="Valider" />
+			</p>	
 		</fieldset>
-	<p>
-		<input type="submit" value="Valider" />
-	</p>
+	
 		<?php
 		}
 		else if(isset($_POST['id_text'])){
