@@ -16,7 +16,6 @@
 		$page='contact';
 		include('../include/entete.php');
 		include('../include/menu.php');
-		include('../include/gotoother.php');
 	?>
 	<div id="corps">
 		<?php

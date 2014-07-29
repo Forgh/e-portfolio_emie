@@ -3,70 +3,70 @@
 function load_articles($time) {
 
   // $response = array(); // @return
-
-
+	require('../../include/link.php');
+  
+	$response = array();
   // This week
   if ($time==="this_week") {
-    $response =  create_selects(from_time(604800));
+  	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 WEEK AND date_texte <= CURDATE() ORDER BY date_texte DESC');
+	$req->execute();
+    $response = array(
+    				'msg' =>to_select($req));
      
   // This month
   } else if ($time=="this_month") {
-    $response = create_selects(from_time(2592000));
+   	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 MONTH AND date_texte <= CURDATE() ORDER BY date_texte DESC');
+	$req->execute();
+    $response = array(
+    				'msg' => to_select($req));
 	
   // This semester
   } else if ($time=="last_6_months") {
-    $response = create_selects(from_time(15768000));
+    $req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 6 MONTH AND date_texte <= CURDATE() ORDER BY date_texte DESC');
+	$req->execute();
+    $response = array(
+    				'msg' => to_select($req));
 	
   // This year
   }  else if ($time=="this_year") {
-    $response = create_selects(from_time(31536000));
+    $req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 YEAR AND date_texte <= CURDATE() ORDER BY date_texte DESC');
+	$req->execute();
+    $response = array(
+    				'msg' =>to_select($req));
 	
 	//Fuck off, everything
   } else if ($time=="all") {
-	$response = create_selects(from_time(0));
+  	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes ORDER BY date_texte DESC');
+	$req->execute();
+	$response = array(
+    				'msg' => to_select($req));
 	
 	//Dumb filter
   } else {
-	$response = "Wrong time format!";
+	$response = array(
+    				'msg' => "Wrong time format!");
   }
   return $response;        
 }
 
-function from_time($time){
+function to_select($req){
 	 
-	require('../../include/link.php');
-	//Return ALL the things!			
-	if ($time == 0) {
-		$req = $bdd -> query('SELECT id_texte, titre_texte FROM textes ORDER BY date_texte DESC');
+	$ret = '<select name="articles" id="titles">';
 		
-	//Oooor just some	
-	} else {
+	while($line = $req->fetch()){
+		$ret .= '<option value="'.$line['id_texte'].'">'.$line['titre_texte'].'</option>';
+	}
 	
-		$now = time();
-		$timeMin= $now - $time; 
+	$req->closeCursor();
 	
-		$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte > ? AND date_texte < ? ORDER BY date_texte DESC');
-		$req -> execute(array($timeMin, $now)); 
-
-		
-	}	
+	$ret .= '</select>';
 	
-	$ret = $req->fetchAll();
 	return $ret;
 				
 }	
 
-function create_selects($infos){
-
-	$ret = '<select name="articles">';
-	while($line = $infos->fetch()){
-		$ret += '<option value="'.$line['id_texte'].'">'.$line['titre_texte'].'</option>';
-	}
-	$ret += '</select>';
-}
-
 if (@$_REQUEST['action'] == 'load_articles' && isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
-    echo json_encode(load_articles($_REQUEST['time']));
+    echo  json_encode(load_articles($_REQUEST['time']));
     exit; // only print a JSON typed response
 }
 ?>

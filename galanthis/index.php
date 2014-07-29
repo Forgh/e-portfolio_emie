@@ -4,7 +4,7 @@
        <title>Galanthis - accueil </title>
        <meta charset="UTF-8" />
 	   <link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
-	   <link rel="stylesheet" href="css/design-stf.css" />
+	   <link rel="stylesheet" href="css/design-emie.css" />
        <link rel="stylesheet" href="css/styles.css" />
 
 

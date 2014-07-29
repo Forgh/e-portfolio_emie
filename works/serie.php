@@ -7,8 +7,8 @@
        <meta name="keywords" content="Emie,emie,EMIE,Vilar,VILAR,vilar,photographe,photographie,photo, séries, series, serie"/>
 	   <link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
 	   <link rel="stylesheet" href="css/design-emie.css" />
-	   <script type="text/javascript" src="highslide/highslide-with-gallery.packed.js"></script>
-	   <script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
+	   <script src="highslide/highslide-with-gallery.packed.js"></script>
+	   <script src="highslide/highslide.config.js" charset="utf-8"></script>
 	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
        <link rel="stylesheet" type="text/css" href="highslide/highslide.css" />

@@ -21,12 +21,10 @@
 
 			$titre = $_POST['title'];
 			$texte = $_POST['texte_article'];
-			$date = time();
-			
-			$adding_text = $bdd->prepare('INSERT INTO textes (titre_texte, texte_libre, date_texte) VALUES (:titre_texte, :texte_libre, :date_texte)');
+						
+			$adding_text = $bdd->prepare('INSERT INTO textes (titre_texte, texte_libre, date_texte) VALUES (:titre_texte, :texte_libre, CURDATE())');
 			$adding_text ->execute(array(	'titre_texte' => $titre,
-												'texte_libre' => $texte,
-												'date_texte' => $date,
+												'texte_libre' => $texte
 												));
 		?>
 		<p>Article "<?php echo $titre; ?>" correctement ajouté !</p>

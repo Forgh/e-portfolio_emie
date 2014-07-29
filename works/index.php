@@ -17,9 +17,7 @@
 		include("../include/entete.php");
 		include("../include/menu.php");
 		//include("../include/link.php");		
-		$cate_other='Installations';
-		include("../include/gotoother.php");
-
+		
 		//$series_dessins= $bdd->query('SELECT * FROM series WHERE nom_categorie= "Dessins" AND position_serie IS NOT NULL ORDER BY position_serie');
 		
 		$i=0;
