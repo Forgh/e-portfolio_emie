@@ -38,10 +38,10 @@
 			
 		
 		</div>
-		<div id="titleArticle"></div>
-		<div id="bodyArticle">
+		<h2 id="titleArticle"></h2>
+		<p id="bodyArticle">
 		
-		</div>
+		</p>
 		<?php
 			/*include("../include/link.php");	
 			////////Récupérations des articles/////////

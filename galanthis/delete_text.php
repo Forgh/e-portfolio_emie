@@ -15,8 +15,25 @@
 	<div id="corps_accueil">
 
 		<?php
+		if (isset($_POST['suppression_choix']))												
+		{	
+			include("include/link.php");
+			//Getting the serie's name (purely aesthetic) 
+			$nom_texte= $bdd->prepare('SELECT titre_texte FROM textes WHERE id_texte = ?');
+			$nom_texte->execute(array($_POST['suppression_choix']));
+			$display_title = $nom_texte->fetch();
+			$nom_texte->closeCursor();
 			
-		if (!isset($_POST['suppression_choix']))												
+			//deleting the serie in the database
+			$suppression_texte= $bdd->prepare('DELETE FROM textes WHERE id_texte= ?');
+			$suppression_texte->execute(array($_POST['suppression_choix']));
+			
+			?>
+			<p> Article "<?php echo $display_title['titre_texte'];?>" supprimé avec succès. </p>
+			<?php
+			
+		}	
+		elseif (!isset($_POST['suppression_choix']))												
 		{	
 		?>
 		<form action="delete_text.php" method="post" enctype="multipart/form-data"> 
@@ -40,26 +57,9 @@
 			</fieldset>											
 		</form>
 				
-				<?php
+		<?php
 		}	
-		elseif (isset($_POST['suppression_choix']))												
-		{	
-			include("include/link.php");
-			//Getting the serie's name (purely aesthetic) 
-			$nom_texte= $bdd->prepare('SELECT titre_texte FROM textes WHERE id_texte = ?');
-			$nom_texte->execute(array($_POST['suppression_choix']));
-			$display_title = $nom_texte->fetch();
-			
-			//deleting the serie in the database
-			$suppression_texte= $bdd->prepare('DELETE FROM texte WHERE id_texte= ?');
-			$suppression_texte->execute(array($_POST['suppression_choix']));
-			
-			?>
-			<p> Article "<?php echo $display_title['titre_texte'];?>" supprimé avec succès. </p>
-			<?php
-		}
-		
-	?>
+		?>
 														
 	</div>			
 	</body>

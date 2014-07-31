@@ -34,8 +34,17 @@
 	<div id="corps_accueil">
 
 		<?php
+		if(isset($_POST['id_text'])){
+			include("include/link.php");
+						
+			$edit_text= $bdd->prepare('UPDATE textes SET titre_texte = ?,  texte_libre = ? WHERE id_texte = ?');
+			$edit_text->execute(array($_POST['title'],$_POST['texte_article'],$_POST['id_text']));
 			
-		if (!isset($_POST['edition_choix']))												
+		?>
+			<p> Article "<?php echo $_POST['title'];?>" édité avec succès. </p>
+		<?php
+		}	
+		elseif (!isset($_POST['edition_choix']))												
 		{	
 		?>
 		<form action="edit_text.php" method="post" enctype="multipart/form-data"> 
@@ -68,6 +77,8 @@
 			$nom_texte= $bdd->prepare('SELECT titre_texte, texte_libre FROM textes WHERE id_texte = ?');
 			$nom_texte->execute(array($_POST['edition_choix']));
 			$affichage_texte = $nom_texte->fetch();
+			$nom_texte->closeCursor();
+			
 			?>
 			<form action="edit_text.php" method="post" enctype="multipart/form-data">
 		<fieldset>
@@ -89,14 +100,7 @@
 	
 		<?php
 		}
-		else if(isset($_POST['id_text'])){
-			$edit_text= $bdd->prepare('UPDATE textes SET titre_texte = ?,  texte_libre = ? WHERE id_texte = ?');
-			$edit_text = $bdd->execute(array($_POST['title'],$_POST['texte_article'],$_POST['id_text']));
-			
-		?>
-			<p> Article "<?php echo $_POST['title'];?>" édité avec succès. </p>
-		<?php
-		}
+		
 		?>
 	</div>			
 	</body>
