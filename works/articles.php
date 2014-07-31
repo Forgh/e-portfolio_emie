@@ -34,13 +34,13 @@
 			<div id="newsTitles">
 				
 			</div>
+				
 			
 		
 		</div>
-		
+		<div id="titleArticle"></div>
 		<div id="bodyArticle">
-			
-			
+		
 		</div>
 		<?php
 			/*include("../include/link.php");	

@@ -7,7 +7,14 @@ function load_this_article($id){
 	$req = $bdd->prepare('SELECT titre_texte, texte_libre FROM textes WHERE id_texte = ?');
 	$req -> execute(array($id));
 	
-	$ret = $req -> fetchAll();
+	$article= $req->fetch();
+	
+	$ret = array(
+			'titre'=>$article['titre_texte'],
+			'texte'=>$article['texte_libre']);
+	
+	$req->closeCursor();
+	
 	return $ret;
 }
 

@@ -1,1 +1,1 @@
-<a href="travaux.php"><div id="back"></div></a>
+<a href="index.php"><div id="back"></div></a>

@@ -63,7 +63,7 @@
 						{	
 						?>
 							<li id="entry_<?php echo $choix['id_serie'] ?>">
-								<img src="../<?php echo $_POST['categorie_choix'].'/'.$choix['link_preview_serie'] ?>" alt="<?php echo $choix['nom_serie'] ?>" 
+								<img src="../works/<?php echo $choix['link_preview_serie'] ?>" alt="<?php echo $choix['nom_serie'] ?>" 
 									height="150" width="150"/>
 							</li>
 					
@@ -81,7 +81,7 @@
 						while (($positions_actuelles = $liste_par_position->fetch()) AND ($j<12))
 						{
 				?>			<li id="entry_<?php echo $positions_actuelles['id_serie'] ?>">
-								<img src="../<?php echo $_POST['categorie_choix'].'/'.$positions_actuelles['link_preview_serie'] ?>" alt="<?php echo $positions_actuelles['nom_serie'] ?>" 
+								<img src="../works/<?php echo $positions_actuelles['link_preview_serie'] ?>" alt="<?php echo $positions_actuelles['nom_serie'] ?>" 
 									height="150" width="150"/>
 							</li>
 							

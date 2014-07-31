@@ -24,7 +24,8 @@
 		<div id="corps">
 	<?php		
 		
-		include("../include/link.php");		$info_serie = $bdd->prepare('SELECT * FROM images WHERE nom_serie = ?');
+		include("../include/link.php");		
+		$info_serie = $bdd->prepare('SELECT * FROM images WHERE nom_serie = ?');
 		$info_serie->execute(array(htmlspecialchars($_GET['serie'])));
 		
 

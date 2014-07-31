@@ -59,7 +59,8 @@ function to_select($req){
 	
 	$req->closeCursor();
 	
-	$ret .= '</select>';
+	$ret .= '</select>
+	<input type="submit" value"OK" onclick="sendTitle()" id="sumbitArticle">';
 	
 	return $ret;
 				

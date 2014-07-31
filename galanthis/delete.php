@@ -13,7 +13,9 @@
 			include("include/menu_galanthis.php");
 			
 			function deleteImage($filedir) {
-				unlink('works/'.$filedir.'');
+				$open = opendir('../works/images');
+				unlink('../works/'.$filedir.'');
+				closedir($open);
 			}
 	?>
 	<div id="corps_accueil">
@@ -46,19 +48,27 @@
 		if(isset($_POST['suppression_choix']))												
 		{	
 			include("include/link.php");
-			//Getting the serie's name (purely aesthetic) 
-			$nom_serie= $bdd->prepare('SELECT nom_serie FROM series WHERE id_serie = ?');
+			//Getting the serie's name and link to the preview (not just for aesthetism...) 
+			$nom_serie= $bdd->prepare('SELECT * FROM series WHERE id_serie = ?');
 			$nom_serie->execute(array($_POST['suppression_choix']));
-
+			$name = $nom_serie->fetch();
+			$link_preview = $name['link_preview_serie'];
+			
 			//deleting files
 			$directories = $bdd->prepare('SELECT link_image, link_thumbnail FROM images WHERE nom_serie = ?');
-			$directories->execute(array($nom_serie['nom_serie']));
+			$directories->execute(array($name['nom_serie']));
+			
+			
+			$nom_serie->closeCursor();
+							
+			deleteImage($link_preview);
 			
 			while ($dir = $directories->fetch())
 			{
 				deleteImage($dir['link_image']);
 				deleteImage($dir['link_thumbnail']);
 			}
+			
 			$directories->closeCursor();
 			
 			//deleting the serie in the database
@@ -66,7 +76,7 @@
 			$suppression_serie->execute(array($_POST['suppression_choix']));
 			
 			?>
-			<p> Série "<?php echo $nom_serie['nom_serie'];?>" supprimée avec succès. </p>
+			<p> Série "<?php echo $name['nom_serie'];?>" supprimée avec succès. </p>
 			<?php
 		}
 		

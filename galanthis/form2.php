@@ -18,7 +18,7 @@
 	<div id="corps_accueil">
 
 	<?php
-	if (isset($_POST['categorie_choix'])) {
+	if (isset($_POST['titre_serie'])) {
 		function createThumbnail ($lien, $lien_thumbnail)
 		{
 			$extension_upload = strtolower(  substr(  strrchr($lien, '.')  ,1)  );
@@ -86,6 +86,11 @@
 							$absolute_link_preview="../{$nom_categorie}/images/{$id_image}_resampled.{$extension_upload}";
 							createThumbnail($nom,$absolute_link_preview);
 							
+							//deleting the temporary image (before resampling)
+							$open = opendir('../works/images');
+							unlink($nom);
+							closedir($open);
+							
 							echo 'Transfert de l\'image preview réussi </p>';
 						}
 						else {
@@ -102,7 +107,7 @@
 		$new_serie= $bdd->prepare('INSERT INTO series(nom_serie, link_preview_serie) VALUES (:nom_serie, :link_preview_serie)');
 		$new_serie->execute(array(
 						'nom_serie' => $nom_serie,
-						'link_preview_serie' => $link_preview,
+						'link_preview_serie' => $link_preview
 					));
 		?>	
 			<form action="post_ajout_serie.php" method="post" enctype="multipart/form-data" id="cibleFormAjout">
@@ -147,7 +152,7 @@
 
         <!-- The main script file -->
 		<?php
-		if (isset($_POST['categorie_choix'])) {
+		if (isset($_POST['titre_serie'])) {
 				echo '<script src="jquery/script_form_image.js"></script>';
 		}	
 		?>

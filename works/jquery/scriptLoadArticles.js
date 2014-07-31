@@ -2,7 +2,6 @@ $(document).ready(function () {
   //var time = $('#month');
   var selectors = $('#selectBoxes');
   var news = $('#newsTitles');
-  var text = $('#bodyArticle');
   
   $('#time').change(function () {
 
@@ -16,21 +15,33 @@ $(document).ready(function () {
           success: function (j) {
           	news.html(j.msg);
           }
-        }).done(function() {
-        	$('#titles').change(function () {
-				$.ajax({
-			        url: 'controlers/loadThisArticle.php',
-			        data: 'action=load_this_article&id=' + this.value,
-			        dataType: 'json',
-			        type: 'post',
-			        success: function (j) {
-		            	text.html(j.msg);
-		         	}
-	       		});
-			});
-       }) .fail(function() {
-alert( "Erreur, veuillez contacter le propriétaire du site. Code : AJ-SLA-F" );
+        }).fail(function() {
+			alert( "Erreur, si l'erreur se reproduit, merci de contacter le propriétaire du site. Code : AJ-SLA-F" );
+		});
+	});
+	
+
+
+	
+
 });
-    });
-		
-  });
+
+function sendTitle() {
+		if($('#titles').val() != '') {
+			var text = $('#bodyArticle');
+			var title = $('#titleArticle');
+			var id = $('#titles').val();
+					$.ajax({
+				        url: 'controlers/loadThisArticle.php',
+				        data: 'action=load_this_article&id=' + id,
+				        dataType: 'json',
+				        type: 'post',
+				        success: function (j) {
+				        	title.html(j.titre);
+			            	text.html(j.texte);
+			         	}
+		       		}).fail(function() {
+						alert( "Erreur, si l'erreur se reproduit, merci de contacter le propriétaire du site. Code : AJ-SLA-F2" );
+		});;
+		};
+	};
