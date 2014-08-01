@@ -2,6 +2,7 @@ body
 {
 	background-image: url("../../design-ressources/greyzz.png");
 	/*background-color:white;*/
+	margin:0;
 }
 
 img 
@@ -155,14 +156,21 @@ a:hover
 /*---------Selects articles---------*/
 #selectBoxes {
 	float: left;
-	width:25%;
+	max-width:25%;
+	min-width:20%;
+	border: 2px solid gray;
+	    border-radius:50px; 
+	    margin-left: 1%; 
+	    margin-top: 5%;
+
 }
 #selectBoxes input {
 	background-image: url("../../design-ressources/greyzz.png");
 	border: 1px solid gray;
-    border-radius:3px;  
-	width: 110px;
+    border-radius:30px;  
+	width: 100%;
 	color: gray;
+	height: 20px;
 }
 
 #selectBoxes input:hover {
@@ -171,15 +179,22 @@ a:hover
 
 #selectBoxes li {
 	list-style: none;
-	margin-bottom : 10px;;
+	margin-bottom : 10px;
 }
 
 
 #selectBoxes p {
 	color: gray;
+	font-size: 0.85em;
+	font-family: "grandm", Arial;
+	margin-left: 40px; 
+	margin-bottom: -5px;
+}
+
+#newsTitles{
+	margin-left: -30px;
 }
 #box1{
-	width:130px;
 	float:left;
 }
 #box2{

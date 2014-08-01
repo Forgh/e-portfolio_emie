@@ -1,6 +1,14 @@
 function sendTime(time) {
   //var time = $('#month');
   var news = $('#newsTitles');
+  
+  if(time == "this_week") var margin = '16';
+  else if(time == "this_month") var margin = '46';
+  else if(time == "last_6_months") var margin = '77';
+  else if(time == "this_year") var margin = '107';
+  else if(time == "all") var margin = '138';
+  
+  		news.toggle("slide", "slow").animate({ opacity: 0 },{ queue: false, duration: 'slow' });
 
      // selectors.removeClass('error').html('<img src="images/ajax-loader.gif" height="16" width="16" /> Recherche des articles ...');
         $.ajax({
@@ -11,6 +19,9 @@ function sendTime(time) {
           success: function (j) {
           	news.html(j.msg);
           }
+        }).done(function () {
+        	news.css("margin-top", margin+'px');
+        	news.css("opacity", 0).toggle("slide", "slow").animate({ opacity: 1 },{ queue: false, duration: 'slow' });
         }).fail(function() {
 			alert( "Erreur, si l'erreur se reproduit, merci de contacter le propriétaire du site. Code : AJ-SLA-F" );
 		});
