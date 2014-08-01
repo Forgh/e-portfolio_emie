@@ -36,7 +36,7 @@ h1
 
 p
 {
-   color: gray;
+	color: rgb(51,51,51);
    font-family: Arial;
 }
 
@@ -87,24 +87,6 @@ a:hover
 
 /*-----------FIN Back------------*/
 
-
-/*-------------GoToOther---------*/
-#home
-{
-	width:143px;
-	height:34px;
-	background-image: url('../design-ressources/gotoother.png');
-	position:absolute;
-	margin-top:150px;
-	margin-left:10px;
-}
-
-#home:hover
-{
-	background-image: url('../design-ressources/gotohover.png');
-}
-
-/*----------Fin GoToOther--------*/
 
 /*-------------MENU--------------*/
 #top
@@ -170,8 +152,36 @@ a:hover
 	font-size: 3.5em;
 }
 
+/*---------Selects articles---------*/
+#selectBoxes {
+	float: left;
+	width:25%;
+}
+#selectBoxes input {
+	background-image: url("../../design-ressources/greyzz.png");
+	border: 1px solid gray;
+    border-radius:3px;  
+	width: 110px;
+	color: gray;
+}
+
+#selectBoxes input:hover {
+	color: rgb(205,126,51);
+} 
+
+#selectBoxes li {
+	list-style: none;
+	margin-bottom : 10px;;
+}
 
 
-
-
-
+#selectBoxes p {
+	color: gray;
+}
+#box1{
+	width:130px;
+	float:left;
+}
+#box2{
+	float:left;
+}

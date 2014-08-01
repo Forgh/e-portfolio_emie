@@ -7,8 +7,8 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
 		<link rel="stylesheet" href="css/design-emie.css" />
-		   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
       
 		<script type="text/javascript" src="jquery/scriptLoadArticles.js"></script>
    </head>
@@ -19,25 +19,30 @@
 		include('../include/entete.php');
 		include('../include/menu.php');
 	?>
+	<div id="selectBoxes">
+			<p>Selectionnez un article de :</p>
+			<div id="box1">
+			<ul id="newsTimes">
+				<li><input type="button" value="Cette semaine" onClick="sendTime('this_week')"></li>
+				<li><input type="button" value="Ce mois-ci" onClick="sendTime('this_month')"></li>
+				<li><input type="button" value="Ce semestre" onClick="sendTime('last_6_months')"></li>
+				<li><input type="button" value="Cette année" onClick="sendTime('this_year')"> </li>
+				<li><input type="button" value="Tous les articles" onClick="sendTime('all')"></li>
+			</ul>
+			</div>
+			
+			<div id="box2">
+			<ul id="newsTitles">
+				
+			</ul>
+				</div>
+			
+		
+	</div>
+	
 	<div id="corps">
 		
-		<div id="selectBoxes">
-			Selectionnez un article de ...
-			<select id="time" name="time">
-				<option value="this_week">Cette semaine</option>
-				<option value="this_month">Ce mois-ci</option>
-				<option value="last_6_months">Ces 6 derniers mois</option>
-				<option value="this_year">Cette année</option>
-				<option value="all">Tous les articles</option>
-			</select>
-			
-			<div id="newsTitles">
-				
-			</div>
-				
-			
 		
-		</div>
 		<h2 id="titleArticle"></h2>
 		<p id="bodyArticle">
 		

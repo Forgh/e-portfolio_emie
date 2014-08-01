@@ -11,35 +11,35 @@ function load_articles($time) {
   	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 WEEK AND date_texte <= CURDATE() ORDER BY date_texte DESC');
 	$req->execute();
     $response = array(
-    				'msg' =>to_select($req));
+    				'msg' =>to_button($req));
      
   // This month
   } else if ($time=="this_month") {
    	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 MONTH AND date_texte <= CURDATE() ORDER BY date_texte DESC');
 	$req->execute();
     $response = array(
-    				'msg' => to_select($req));
+    				'msg' => to_button($req));
 	
   // This semester
   } else if ($time=="last_6_months") {
     $req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 6 MONTH AND date_texte <= CURDATE() ORDER BY date_texte DESC');
 	$req->execute();
     $response = array(
-    				'msg' => to_select($req));
+    				'msg' => to_button($req));
 	
   // This year
   }  else if ($time=="this_year") {
     $req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 YEAR AND date_texte <= CURDATE() ORDER BY date_texte DESC');
 	$req->execute();
     $response = array(
-    				'msg' =>to_select($req));
+    				'msg' =>to_button($req));
 	
 	//Fuck off, everything
   } else if ($time=="all") {
   	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes ORDER BY date_texte DESC');
 	$req->execute();
 	$response = array(
-    				'msg' => to_select($req));
+    				'msg' => to_button($req));
 	
 	//Dumb filter
   } else {
@@ -49,18 +49,16 @@ function load_articles($time) {
   return $response;        
 }
 
-function to_select($req){
+function to_button($req){
 	 
-	$ret = '<select name="articles" id="titles">';
+	$ret = '';
 		
 	while($line = $req->fetch()){
-		$ret .= '<option value="'.$line['id_texte'].'">'.$line['titre_texte'].'</option>';
+		$ret .= '<li><input type="button" onClick="sendTitle(\''.$line['id_texte'].'\')" value="'.$line['titre_texte'].'"></li>';
 	}
 	
 	$req->closeCursor();
 	
-	$ret .= '</select>
-	<input type="submit" value"OK" onclick="sendTitle()" id="sumbitArticle">';
 	
 	return $ret;
 				
