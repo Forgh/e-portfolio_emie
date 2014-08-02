@@ -33,7 +33,7 @@
 			</div>
 			
 			<div id="box2">
-				<ul id="newsTitles"
+				<ul id="newsTitles">
 				
 				</ul>
 			</div>
