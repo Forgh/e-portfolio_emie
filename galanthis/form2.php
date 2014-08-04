@@ -16,7 +16,7 @@
 			include("include/entete.php");
 			include("include/menu_galanthis.php");	?>
 	<div id="corps_accueil">
-
+		<h1>Ajouter une série</h1>
 	<?php
 	if (isset($_POST['titre_serie'])) {
 		function createThumbnail ($lien, $lien_thumbnail)

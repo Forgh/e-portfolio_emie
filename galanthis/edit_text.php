@@ -32,7 +32,7 @@
 			include("include/menu_galanthis.php");
 	?>
 	<div id="corps_accueil">
-
+		<h1>Editer un article</h1>
 		<?php
 		if(isset($_POST['id_text'])){
 			include("include/link.php");

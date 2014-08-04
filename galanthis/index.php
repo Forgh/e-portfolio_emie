@@ -19,11 +19,13 @@
 <div id="corps_accueil">
 	<h1> Bienvenue <?php echo $_SERVER['PHP_AUTH_USER'] ?></h1>
 
-	<p>Galanthis est une interface utilisateur vous permettant de facilement gérer le contenu de votre site en tirant partis des fonctionnalités offertes par les langages HTML5, PHP, Javascript ainsi que les bibliothèques JQuery et JQueryUI.</p>
+	<p>Galanthis - Mayaka Variation - est une interface utilisateur vous permettant de facilement gérer le contenu de votre site Web (orienté e-Portfolio) en tirant parti des fonctionnalités offertes par les langages HTML5, PHP, Javascript ainsi que les bibliothèques JQuery et JQueryUI.</p>
+	<p>"Mayaka Variation" est une version de Galanthis spécialement conçu pour la création d'articles. Il dispose du côté visiteur une interface simple permettant de parcourir les différents articles que vous aurez écris.</p>
 	<p>Veuillez utiliser le menu à gauche pour utiliser les différentes applications offerte par cette interface :
 		<ul>
 			<li>Pour ajouter, supprimer une série ou modifier sa position dans la page de présentation des séries, veuillez cliquer sur l'onglet "Séries"</li>
-			<li>Pour modifier une page de texte tel que la page "Expositions" et y ajouter librement du contenu, veuillez cliquer sur l'onglet "Textes"</li>
+			<li>Pour modifier une page d'information tel que la page "Liens" et y ajouter librement du contenu, veuillez cliquer sur l'onglet "Liens / Contact"</li>
+			<li>Enfin, pour ajouter, supprimer ou éditer un article, cliquez sur l'onglet "Textes"</li>
 		</ul>
 	</p>
 

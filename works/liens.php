@@ -7,6 +7,10 @@
         <meta name="keywords" content="Emie,emie,EMIE,Vilar,VILAR,vilar,photographe,photographie,photo, liens"/>
 		<link rel="icon" type="image/png" href="Design-ressources/favicon32.png" />
 		<link rel="stylesheet" href="css/design-emie.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script src="jquery/onPageChange.js" ></script>
+		<script src="jquery/showNewPage.js"></script>
 
    </head>
    <body>
@@ -14,7 +18,6 @@
 	<?php
 		$page='liens';
 		include('../include/entete.php');
-		include('../include/menu.php');
 	?>
 	<div id="corps">
 		<?php

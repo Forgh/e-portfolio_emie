@@ -149,6 +149,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 h1
 {
 	color: gray;
+	font-family: Arial;
 }
 
 a

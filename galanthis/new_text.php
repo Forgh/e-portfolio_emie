@@ -33,7 +33,7 @@
 			include("include/menu_galanthis.php");
 	?>
 	<div id="corps_accueil">
-
+		<h1>Ajouter un article</h1>
 	
 	<form action="add_text.php" method="post" enctype="multipart/form-data">
 		<fieldset>

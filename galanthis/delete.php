@@ -20,7 +20,7 @@
 	?>
 	<div id="corps_accueil">
 
-		
+		<h1>Supprimer une série</h1>
 		
 		<form action="delete.php" method="post" enctype="multipart/form-data"> 
 			<fieldset>	

@@ -14,7 +14,7 @@
 			include("include/menu_galanthis.php");
 	?>
 	<div id="corps_accueil">
-
+		<h1>Ajouter un article</h1>
 		<?php 
 			include("include/link.php");
 			date_default_timezone_set("Europe/Paris"); 

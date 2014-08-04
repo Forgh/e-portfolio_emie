@@ -9,15 +9,16 @@
 		<link rel="stylesheet" href="css/design-emie.css" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-      
 		<script type="text/javascript" src="jquery/scriptLoadArticles.js"></script>
+		<script src="jquery/showNewPage.js"></script>
+		<script src="jquery/onPageChange.js" ></script>
+
    </head>
    <body>
 	
 	<?php
 		$page='articles';
 		include('../include/entete.php');
-		include('../include/menu.php');
 	?>
 	<div id="selectBoxes">
 		

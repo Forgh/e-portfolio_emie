@@ -13,7 +13,7 @@
 			include("include/menu_galanthis.php");
 	?>
 	<div id="corps_accueil">
-
+		<h1>Supprimer un article</h1>
 		<?php
 		if (isset($_POST['suppression_choix']))												
 		{	

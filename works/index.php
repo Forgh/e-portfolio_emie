@@ -9,19 +9,23 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script src="jquery/scriptFadeIn.js" ></script>
 		<script src="jquery/script_hoverGoToOther.js" ></script>
+		<script src="jquery/onPageChange.js" ></script>
+
    </head>
 
 	<body>
 	<?php
 		$page = "travaux";
 		include("../include/entete.php");
-		include("../include/menu.php");
 		include("../include/link.php");		
 		
 		$series_dessins= $bdd->query('SELECT * FROM series WHERE position_serie IS NOT NULL ORDER BY position_serie');
 		
 		$i=0;
-	?><div id="corps">	<?php
+	?>
+	
+	<div id="corpsFolio">
+	<div id="overlay">	<?php
 		while (($preview_dessins = $series_dessins->fetch()) AND ($i<=12))
 		{
 			echo '<a href="serie.php?serie='.$preview_dessins['nom_serie'].'"><img src="'.$preview_dessins['link_preview_serie'].'" alt="'.$preview_dessins['nom_serie'].'" class="imgFade" style="display: none;"/></a>';
@@ -36,5 +40,6 @@
 	
 	?>
 	</div>
+</div>
 	</body>
 </html>

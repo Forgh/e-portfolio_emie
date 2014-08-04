@@ -6,7 +6,7 @@ body
 {
 	background-image: url("../../design-ressources/greyzz.png");
 	/*background-color:white;*/
-	min-height: 100%;
+	height: 100%;
   	margin: 0;
 }
 
@@ -35,6 +35,21 @@ img
 	src: url('../../design-ressources/font/walkwayUESB.ttf');
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
 h1
 {
 	color: gray;
@@ -43,7 +58,7 @@ h1
 p
 {
 	color: rgb(51,51,51);
-   font-family: Arial;
+	font-family: Arial;
 }
 
 a 
@@ -58,13 +73,26 @@ a:hover
 	color:rgb(255,62,255);
 }
 
-#corps
+#corpsFolio
 {
 	width: 50%;
 	margin-top: 5%;
 	margin-left: 25%;
 	height: 100%;
 	padding: 20px;
+	clear: none;
+}
+
+#corps
+{
+	width: 50%;
+	position:absolute;
+	top: 125px;
+	bottom: 25px;
+
+	margin-left: 25%;
+	padding: 20px;
+	overflow-y:auto;
 	clear: none;
 	background-color: rgba(255,255,255,0.4);
 	border: 1px solid rgba(255,255,255,0);
@@ -102,18 +130,26 @@ a:hover
 
 /*-----------FIN Back------------*/
 
+#overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: black; opacity: 0; z-index: 1;}
+
+#overlayDone { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: black; opacity: 0.9; z-index: 1;}
+
 
 /*-------------MENU--------------*/
 #top
 {
 	width: 100%;
+	display:block;
+	background-image: url("../../design-ressources/greyzz.png");
+	position: relative;
+	z-index:3;
 	border-bottom: 1px solid gray;
 	height: 100px;
 	padding:0;
--moz-box-shadow: 0px 1px 5px 0px #656565;
--webkit-box-shadow: 0px 1px 5px 0px #656565;
--o-box-shadow: 0px 1px 5px 0px #656565;
-box-shadow: 0px 1px 5px 0px #656565;
+	-moz-box-shadow: 0px 1px 5px 0px #656565;
+	-webkit-box-shadow: 0px 1px 5px 0px #656565;
+	-o-box-shadow: 0px 1px 5px 0px #656565;
+	box-shadow: 0px 1px 5px 0px #656565;
 /*filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=5);*/
 }
 
@@ -125,8 +161,8 @@ box-shadow: 0px 1px 5px 0px #656565;
 
 #menu
 {
- 	width: 430px;
-	margin-left:35px;
+ 	width: auto;
+	margin-left:32px;
 	margin-top: -50px;
 	}
 
@@ -170,7 +206,7 @@ box-shadow: 0px 1px 5px 0px #656565;
 {
 
  	position: relative; /* on positionne le conteneur */
-width:550px;
+	width:auto;
 	margin-top:-60px;
 	
 }   

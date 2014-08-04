@@ -43,6 +43,7 @@
 ?>
 
 	<div id="corps_accueil">
+		<h1>Ajouter une série</h1>
 		<p>Votre série a bien été enregistrée, elle n'est toutefois pas encore affichée sur le site, veuillez organiser cet affichage sur la page "Ordonner les séries" de votre interface utilisateur.</p>
 	</div>	
 	
