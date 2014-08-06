@@ -10,13 +10,15 @@
 	   <link rel="stylesheet" media="screen" type="text/css" href="css/design-emie.css" />
        		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	   <script src="jquery/scriptFadeInHomePage.js"></script>
 		
 	   
    </head>
    <body>
 		<div id="welcomebox" >
 			<a href="works/index.php">
-				<img src="design-ressources/welcome.png" id="welcome" alt="welcome" />
+				<p id="sign">Emie Vilar</p>
+				<p id="enter">[ Entrer ]</p>
 			</a>
 		</div>
 <script type="text/javascript">

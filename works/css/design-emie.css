@@ -16,6 +16,30 @@ img
 }
 
 @font-face {
+	font-family : "webly";
+	src: url('../../design-ressources/font/weblysleekuisl.ttf');
+}
+
+@font-face {
+	font-family : "webly";
+	src: url('../../design-ressources/font/weblysleekuisbi.ttf');
+	font-weight:bold;
+	font-style:italic;
+}
+
+@font-face {
+	font-family : "webly";
+	src: url('../../design-ressources/font/weblysleekuisli.ttf');
+	font-style:italic;
+}
+
+@font-face {
+	font-family : "webly";
+	src: url('../../design-ressources/font/weblysleekuisb.ttf');
+	font-weight:bold;
+}
+
+@font-face {
 	font-family : "grandl";
 	src: url('../../design-ressources/font/grandezzalight.ttf');
 }
@@ -50,15 +74,17 @@ img
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
-h1
+h2
 {
 	color: gray;
+	font-family:"webly";
 }
 
 p
 {
 	color: rgb(51,51,51);
-	font-family: Arial;
+	font-family:"webly", Arial;
+	font-style:none;
 }
 
 a 
@@ -78,8 +104,15 @@ a:hover
 	width: 50%;
 	margin-top: 5%;
 	margin-left: 25%;
-	height: 100%;
 	padding: 20px;
+	clear: none;
+}
+
+#centerer{
+		width: 50%;
+	margin-top: 12%;
+	margin-left: 25%;
+	position:relative;
 	clear: none;
 }
 
@@ -111,16 +144,24 @@ a:hover
 	vertical-align:bottom;
 }
 
+.imgFadeSerie
+{
+	margin-right : 5%;
+	margin-bottom: 5%;
+	vertical-align:middle;
+}
+
 /*------------Back---------------*/
 
 #back
 {
 	 background-image: url('../design-ressources/back.png');
      position:absolute;
+     z-index: 2;
      left: 20px;
-     top: 250px;
-	 width:128px;
-	height:60px;
+     top: 120px;
+	 width:97px;
+	height:29px;
 }
 
 #back:hover
@@ -130,7 +171,7 @@ a:hover
 
 /*-----------FIN Back------------*/
 
-#overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: black; opacity: 0; z-index: 1;}
+#overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: black; opacity: 0; z-index: 1; }
 
 #overlayDone { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: black; opacity: 0.9; z-index: 1;}
 
@@ -164,7 +205,7 @@ a:hover
  	width: auto;
 	margin-left:32px;
 	margin-top: -50px;
-	}
+}
 
 .liMenu
 {
@@ -213,7 +254,7 @@ a:hover
 
 #entete p
 {
-	font-family : "walkwayUESB";
+	font-family : "walkwayUESB", Arial;
 	font-size: 3.5em;
 	  text-align: center;
 
@@ -224,7 +265,11 @@ a:hover
 	float: left;
 	max-width:25%;
 	min-width:20%;
-	border: 2px solid gray;
+	border: 1px solid gray;
+		-moz-box-shadow: inset 0px 0px 5px 0.3px #656565;
+	-webkit-box-shadow: inset 0px 0px 5px 0.3px #656565;
+	-o-box-shadow: inset 0px 0px 5px 0.3px #656565;
+	box-shadow: inset 0px 0px 5px 0.3px #656565;
 	    border-radius:50px; 
 	    margin-left: 1%; 
 	    margin-top: 5%;
@@ -235,7 +280,7 @@ a:hover
 	border: 1px solid gray;
     border-radius:30px;  
 	width: 100%;
-	color: gray;
+	color:  rgb(51,51,51);
 	height: 20px;
 }
 

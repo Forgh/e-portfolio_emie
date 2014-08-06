@@ -25,20 +25,24 @@
 	?>
 	
 	<div id="corpsFolio">
-	<div id="overlay">	<?php
-		while (($preview_dessins = $series_dessins->fetch()) AND ($i<=12))
-		{
-			echo '<a href="serie.php?serie='.$preview_dessins['nom_serie'].'"><img src="'.$preview_dessins['link_preview_serie'].'" alt="'.$preview_dessins['nom_serie'].'" class="imgFade" style="display: none;"/></a>';
-			
-			$i++;
-			
-			if ($i%4==0) 
-			{ 
-				echo '<br>'; //Si on a affiché 4 images, on va à la ligne
+	<div id="overlay">	
+		<div id="centerer">
+		<?php
+			while (($preview_dessins = $series_dessins->fetch()) AND ($i<=12))
+			{
+				echo '<a href="serie.php?serie='.$preview_dessins['nom_serie'].'"><img src="'.$preview_dessins['link_preview_serie'].'" alt="'.$preview_dessins['nom_serie'].'" class="imgFade" style="display: none;"/></a>';
+				
+				$i++;
+				
+				if ($i%4==0) 
+				{ 
+					echo '<br>'; //Si on a affiché 4 images, on va à la ligne
+				}
 			}
-		}
-	
-	?>
+		
+		?>
+		</div>
+	</div>
 	</div>
 </div>
 	</body>

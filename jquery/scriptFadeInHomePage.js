@@ -1,10 +1,9 @@
 $(document).ready(function(){
-//	var dessins = $("#linkDessins");
-//	var installations = $("#linkInstallations");
-	
-	$("#linkDessins").show('slide', {duration : 2000, direction :'down'});
-
-	$("#linkInstallations").show('slide', {duration : 2000, direction :'up'});
-	
-
+	$("#enter").animate({ opacity: 1 },{ duration: 2000 });
+	$('a').mouseover(function(){
+		$('#enter').css("color","rgb(205,126,51)");
+	});
+	$('a').mouseleave(function(){
+		$('#enter').css("color","gray");
+	});
 });

@@ -1,6 +1,0 @@
-AuthUserFile "/homez.183/stephanenp/www/galanthis/.htpasswd"
-AuthGroupFile /dev/null
-AuthName "Galanthis"
-AuthType Basic
-require valid-user
-SetEnv PHP_VER 5_4

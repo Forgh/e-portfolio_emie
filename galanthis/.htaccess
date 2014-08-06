@@ -1,0 +1,4 @@
+AuthName "Galanthis - Mayaka Variation -"
+AuthType Basic
+AuthUserFile "C:\wamp\www\e-portfolio_emie\galanthis\.htpasswd"
+require valid-user

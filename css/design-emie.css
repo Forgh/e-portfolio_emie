@@ -1,6 +1,6 @@
 body 
 {
-	background-image: url("../design-ressources/background.jpg");
+	background-image: url("../design-ressources/greyzz.png");
 	height: 100%;
 }
 
@@ -9,45 +9,45 @@ img
    border: none;
 }
 
+@font-face {
+	font-family : "grandl";
+	src: url('../design-ressources/font/grandezzalight.ttf');
+}
+
+@font-face {
+	font-family : "walkwayUESB";
+	src: url('../design-ressources/font/walkwayUESB.ttf');
+}
+
+
 #welcomebox {
-	height: 57px;
-	width: 331px;
+
+	height: 125px;
+	width: 450px;
 	position:absolute;
 	left:50%;
 	bottom: 50%;
-	margin-left:-165px;
-	margin-bottom:-28px;
-	}
-
-#linkInstallations {
-	background-image: url("../design-ressources/Installations_off.png");
-	height:35px;
-	width:124px;
-	float:left;
-	z-index:-1;
-	margin-bottom:3px;
+	margin-left:-225px;
+	text-align: center;
 }
 
-#linkInstallations:hover{
-	background-image: url("../design-ressources/Installations_on.png");
-	height:35px;
-	width:124px;
+#sign {
+	font-family: "walkwayUESB";
+	color: black;
+	font-size: 3.5em;
 }
 
-#linkDessins {
-	background-image: url("../design-ressources/Dessins_off.png");
-	height:35px;
-	width:124px;
-	float:right;
-	z-index:-1;
-	margin-bottom: 3px;
+#enter {
+	font-family: "grandl";
+	font-size: 1.5em;
+	opacity:0;
+	
 }
 
-#linkDessins:hover{
-	background-image: url("../design-ressources/Dessins_on.png");
-	height:35px;
-	width:124px;
+#enter:hover{
+	color: rgb(205,126,51);
 }
+
 
 /* --------------------------UI---------------------------*/	
 #entete

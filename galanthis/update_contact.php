@@ -33,7 +33,7 @@
 			include("include/menu_galanthis.php");
 	?>
 	<div id="corps_accueil">
-		<h1>Editer la page "Contact""</h1>
+		<h1>Editer la page "Contact"</h1>
 	<?php
 	////////////////////////////////Update du texte/////////////////////////////
 
