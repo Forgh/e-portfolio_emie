@@ -3,41 +3,36 @@
 function load_articles($time) {
 
   // $response = array(); // @return
-	require('../../include/link.php');
+	require('../models/Article.php');
   
 	$response = array();
   // This week
   if ($time==="this_week") {
-  	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 WEEK AND date_texte <= CURDATE() ORDER BY date_texte DESC');
-	$req->execute();
+  	$req = Article::selectThisWeekArticles();
     $response = array(
     				'msg' =>to_button($req));
      
   // This month
   } else if ($time=="this_month") {
-   	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 MONTH AND date_texte <= CURDATE() ORDER BY date_texte DESC');
-	$req->execute();
+   	$req = Article::selectThisMonthArticles();
     $response = array(
     				'msg' => to_button($req));
 	
   // This semester
   } else if ($time=="last_6_months") {
-    $req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 6 MONTH AND date_texte <= CURDATE() ORDER BY date_texte DESC');
-	$req->execute();
+    $req = Article::selectThisSemesterArticles();
     $response = array(
     				'msg' => to_button($req));
 	
   // This year
   }  else if ($time=="this_year") {
-    $req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes WHERE date_texte >= CURDATE() - INTERVAL 1 YEAR AND date_texte <= CURDATE() ORDER BY date_texte DESC');
-	$req->execute();
+    $req = Article::selectThisYearArticles();
     $response = array(
     				'msg' =>to_button($req));
 	
 	//Fuck off, everything
   } else if ($time=="all") {
-  	$req = $bdd -> prepare('SELECT id_texte, titre_texte FROM textes ORDER BY date_texte DESC');
-	$req->execute();
+  	$req = Article::selectAllArticles();
 	$response = array(
     				'msg' => to_button($req));
 	

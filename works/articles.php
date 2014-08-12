@@ -19,6 +19,7 @@
 	<?php
 		$page='articles';
 		include('../include/entete.php');
+		include('controlers/loadLastArticle.php');
 	?>
 	<div id="selectBoxes">
 		
@@ -43,19 +44,10 @@
 	</div>
 	
 	<div id="corps">
-		<?php
-			include("../include/link.php");	
-			////////Récupérations des articles/////////
-			$articles = $bdd->query('SELECT titre_texte, texte_libre FROM textes WHERE id_texte = (SELECT MAX(id_texte) FROM textes)');
-			////////Récupération et affichage du texte actuel ///////////////////////////////////////////////
-			$affichage_texte = $articles->fetch();
-			$articles->closeCursor();
-			
-		?>
 		
-		<h2 id="titleArticle"><?php echo $affichage_texte['titre_texte']; ?></h2>
+		<h2 id="titleArticle"><?php echo $titre; ?></h2>
 		<div id="bodyArticle">
-			<?php echo $affichage_texte['texte_libre']; ?>
+			<?php echo $texte; ?>
 		</div>
 		
 	</div> 
