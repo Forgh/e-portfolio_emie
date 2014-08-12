@@ -43,21 +43,21 @@
 	</div>
 	
 	<div id="corps">
-		
-		
-		<h2 id="titleArticle"></h2>
-		<p id="bodyArticle">
-		
-		</p>
 		<?php
-			/*include("../include/link.php");	
+			include("../include/link.php");	
 			////////Récupérations des articles/////////
-			$articles = $bdd->query('SELECT id_texte FROM textes ORDER BY 
+			$articles = $bdd->query('SELECT titre_texte, texte_libre FROM textes WHERE id_texte = (SELECT MAX(id_texte) FROM textes)');
 			////////Récupération et affichage du texte actuel ///////////////////////////////////////////////
-			$texte_contact = $bdd->query('SELECT texte_libre_info FROM informations WHERE titre_info = "contact"');
-			$affichage_texte = $texte_contact->fetch();
-			echo $affichage_texte['texte_libre_info'];*/
+			$affichage_texte = $articles->fetch();
+			$articles->closeCursor();
+			
 		?>
+		
+		<h2 id="titleArticle"><?php echo $affichage_texte['titre_texte']; ?></h2>
+		<div id="bodyArticle">
+			<?php echo $affichage_texte['texte_libre']; ?>
+		</div>
+		
 	</div> 
  
 	</body>

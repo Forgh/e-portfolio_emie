@@ -40,6 +40,8 @@ function sendTitle(id) {
 				        dataType: 'json',
 				        type: 'post',
 				        success: function (j) {
+				        	title.empty();
+				        	text.empty();
 				        	title.html(j.titre);
 			            	text.html(j.texte);
 			         	}
